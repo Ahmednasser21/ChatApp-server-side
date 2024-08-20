@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package chatroomwithdbserver;
 
 import java.sql.Connection;
@@ -13,17 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import org.apache.derby.jdbc.ClientDriver;
 
-/**
- *
- * @author Ahmed
- */
 public class Dao {
     private static Dao instance = null;
     static Connection conn;
     
     private Dao() throws SQLException{
         DriverManager.registerDriver(new ClientDriver());
-        conn = DriverManager.getConnection("jdbc:derby://localhost:1527/user", "root", "root");
+        conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Users", "root", "root");
     }
     
     public static Dao getInstance() throws SQLException{
